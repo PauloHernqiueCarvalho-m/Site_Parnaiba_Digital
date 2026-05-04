@@ -1,0 +1,184 @@
+/* 1. RESET E BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-snap-type: y mandatory; /* Ativa o encaixe automático de slides */
+    scroll-behavior: smooth;       /* Rolagem suave ao clicar em links */
+}
+
+body {
+    font-family: "Times New Roman", Times, Georgia, serif;
+    background-color: #EFE9E1;
+    color: #000000;
+    line-height: 1.5;
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 2. MENU SUPERIOR FIXO (Ajustado para acompanhar os slides) */
+.menu-principal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    position: fixed; /* Mudei para fixed para ele não sumir */
+    top: 0;
+    z-index: 100;
+    background-color: rgba(239, 233, 225, 0.9); /* Leve transparência */
+    border-bottom: 2px solid rgba(82, 36, 3, 0.2);
+}
+
+.logo-texto {
+    color: #a36132;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.links-navegacao a {
+    font-size: 22px;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.links-navegacao a:hover { color: #a36132; }
+
+/* 3. SEÇÃO HERO (SLIDE 1) */
+.secao-hero {
+    background-image: url('https://images.unsplash.com/photo-1740924912367-3a5767920771?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start; /* Encaixe do slide */
+}
+
+.quadro-destaque {
+    background-color: #EFE9E1; 
+    padding: 40px;
+    text-align: center;
+    border: 7px solid #C19A6B;
+    max-width: 60%;
+    min-height: 60%;
+}
+
+.titulo-hero {
+    color: #a36132;
+    font-size: 55px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.subtitulo-hero { margin-bottom: 30px; font-size: 20px; }
+
+.botao-explorar {
+    background-image: linear-gradient(144deg, #c38753, #d68b36 50%, #e18318 100%);
+    border: 0;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-top: 50px;
+}
+.botao-explorar:active { transform: scale(0.90); }
+
+/* 4. SEÇÃO DE INFORMAÇÕES (SLIDE 2) */
+.container-informacoes {
+    width: 100%; /* Ajustado para 100% para o snap funcionar melhor */
+    height: 100vh; /* Altura total da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 80px 5% 0 5%; /* Espaço para o menu fixo */
+}
+
+.titulo-secao {
+    text-align: center;
+    font-size: 45px;
+    color: #6b4c3b;
+    margin-bottom: 30px;
+}
+
+.grade-comparativa {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    max-width: 1100px;
+}
+
+.card-comparativo {
+    flex: 1;
+    padding: 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.card-comparativo:hover{
+    transform: translateY(-10px);
+    box-shadow: 5px 10px 23px rgba(0, 0, 0, 0.2);
+}
+
+.card-negativo { border: 2px solid #c97a7a; background-color: #fbeaea; }
+.card-positivo { border: 2px solid #d6c3a3; background-color: #f9f5ef; }
+
+.card-comparativo ul { padding-left: 20px; margin-top: 10px; }
+
+/* 5. BANNER MARROM E ESTATÍSTICAS */
+.banner-destaque {
+    background-color: #8b5e3c;
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 1100px;
+    width: 90%;
+}
+
+.grade-estatisticas {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.item-estatistica {
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 15px;
+    border-radius: 10px;
+    width: 30%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.item-estatistica:hover{
+    transform: translateY(-10px);
+    box-shadow: 5px 10px 23px rgba(0, 0, 0, 0.2);
+}
+
+/* 6. RODAPÉ (SLIDE 3) */
+.rodape-final {
+    background-color: #8b5e3c;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 5px solid #d6c3a3;
+    height: 10vh; /* Faz o rodapé ser o último slide cheio */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: start;
+}
